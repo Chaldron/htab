@@ -2,11 +2,13 @@
   <div id="container">
     <div class="tab" id="header">
       <p>TID</p>
+      <p>TITLE</p>
       <p>URL</p>
     </div>
     <div class="tab" v-for="(tab, key) in tabs" :key="key">
       <p class="tab-id">{{ key }}</p>
-      <p class="tab-url">{{ tab.tab.title }}</p>
+      <p class="tab-title">{{ tab.tab.title }}</p>
+      <p class="tab-title">{{ tab.tab.url }}</p>
     </div>
   </div>
 </template>
@@ -31,11 +33,11 @@ export default {
 
   .tab
     display: grid
-    grid-template-columns: 40px auto
-    grid-auto-rows: minmax(min-content, max-content)
-    height: 25px
+    grid-template-columns: 40px 30% 30%
+    //grid-auto-rows: minmax(min-content, max-content)
+    //height: 25px
 
-    .tab-url
+    .tab-url, .tab-title
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
